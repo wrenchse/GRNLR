@@ -110,6 +110,9 @@ public:
     int wrap(int val, const int lo, const int hi);
     float clip(float n, float lower, float upper);
     
+    Random random;
+    
+    
     // Parameters
     // Main Grain Parameters:
     AudioParameterFloat* positionParam;

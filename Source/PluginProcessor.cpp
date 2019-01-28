@@ -62,6 +62,7 @@ GrrnlrrAudioProcessor::GrrnlrrAudioProcessor() :    Thread("scheduling thread"),
     formatManager.registerBasicFormats();
     startThread();
 
+    hasEditor();
 }
 
 GrrnlrrAudioProcessor::~GrrnlrrAudioProcessor()
@@ -162,7 +163,7 @@ void GrrnlrrAudioProcessor::checkForRestoredPath()
     path = restoredPath;
     if(path.isNotEmpty()){
         LOG("restoredPath: " << path);
-        swapVariables(chosenPath, path);
+        std::swap(chosenPath, path);
         restoredPath = "";
     }
 }
@@ -170,7 +171,7 @@ void GrrnlrrAudioProcessor::checkForRestoredPath()
 void GrrnlrrAudioProcessor::checkForPathToOpen()
 {
     String pathToOpen;
-    swapVariables(pathToOpen, chosenPath);
+    std::swap(pathToOpen, chosenPath);
     
     if(pathToOpen.isNotEmpty()){
         LOG("pathToOpen: " << pathToOpen);

@@ -32,6 +32,8 @@
 GrrnlrrAudioProcessorEditor::GrrnlrrAudioProcessorEditor (GrrnlrrAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
 {
+    
+    
     addAndMakeVisible(openButton);
     openButton.setButtonText("Open...");
     openButton.addListener(this);
@@ -125,7 +127,10 @@ GrrnlrrAudioProcessorEditor::GrrnlrrAudioProcessorEditor (GrrnlrrAudioProcessor&
     setSize (500, 300);
     
     LOG("PluginEditor constructor called");
+    
 }
+
+
 
 GrrnlrrAudioProcessorEditor::~GrrnlrrAudioProcessorEditor()
 {
@@ -133,6 +138,8 @@ GrrnlrrAudioProcessorEditor::~GrrnlrrAudioProcessorEditor()
 }
 
 //==============================================================================
+
+
 void GrrnlrrAudioProcessorEditor::resized()
 {
     const int width = getWidth();
@@ -195,17 +202,17 @@ void GrrnlrrAudioProcessorEditor::sliderValueChanged(Slider* slider)
 void GrrnlrrAudioProcessorEditor::openButtonClicked()
 {
     FileChooser chooser ("Select a File to open...",
-                         File::nonexistent,
+                         File(),
                          "*.wav", "*.aif", "*.aiff");
     
     if(chooser.browseForFileToOpen()){
         const File file (chooser.getResult());
         String path (file.getFullPathName());
-        swapVariables (processor.chosenPath, path);
+        std::swap(processor.chosenPath, path);
     }
 }
 
 void GrrnlrrAudioProcessorEditor::paint (Graphics& g)
 {
-    g.fillAll (Colours::white);
+    g.fillAll (Colours::black);
 }

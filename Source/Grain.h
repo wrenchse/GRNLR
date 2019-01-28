@@ -34,6 +34,8 @@ public:
     const float rate;
     const float amp;
     
+    Random random;
+    
     Grain(long long int onset, int length, int startPos, float center, float sustain, float curve, float r, float a) : onset(onset), length(length), startPosition(startPos),
                                                                                             envAttack((1 - sustain) * center), envAttackRecip(1/envAttack),
                                                                                             envRelease(sustain + envAttack), envReleaseRecip(1/(1-envRelease)),
@@ -112,6 +114,7 @@ public:
     
     void process (AudioSampleBuffer& currentBlock, AudioSampleBuffer& fileBuffer, int numChannels, int blockNumSamples, int fileNumSamples, long long int time)
     {
+        
         for(int channel=0; channel<numChannels; ++channel){
             const float gain = envelope(time);
             
@@ -132,9 +135,10 @@ public:
             float a = fileData[(readPos - 3) % fileNumSamples];
             float b = fileData[(readPos - 2) % fileNumSamples];
             float c = fileData[(readPos - 1) % fileNumSamples];
+            float pan = random.nextFloat();
             
             currentSample = cubicinterp(fracPos, a, b, c, currentSample);
-            currentSample = currentSample * gain * amp;
+            currentSample = currentSample * gain * amp * pan;
             
             channelData[time % blockNumSamples] += currentSample;
         }

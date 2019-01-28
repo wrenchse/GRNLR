@@ -1,6 +1,22 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2015
-Project("{4E2319AF-56B8-4237-2143-67DFEF047125}") = "GRRNLRR", "GRRNLRR.vcxproj", "{7E2F1099-C79A-BBEC-8BF3-3E97B50D3EA7}"
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GRRNLRR - Standalone Plugin", "GRRNLRR_StandalonePlugin.vcxproj", "{682E81A5-34D7-FF21-092F-5366391371B1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0DA6DA6D-A37D-26C3-2DDD-5026EDD09499} = {0DA6DA6D-A37D-26C3-2DDD-5026EDD09499}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GRRNLRR - VST", "GRRNLRR_VST.vcxproj", "{D2D7D618-0548-D543-A433-C4DD2FEBF928}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0DA6DA6D-A37D-26C3-2DDD-5026EDD09499} = {0DA6DA6D-A37D-26C3-2DDD-5026EDD09499}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GRRNLRR - Unity Plugin", "GRRNLRR_UnityPlugin.vcxproj", "{7C58917E-ECF0-7CE1-E26B-D0D4AF3782A0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0DA6DA6D-A37D-26C3-2DDD-5026EDD09499} = {0DA6DA6D-A37D-26C3-2DDD-5026EDD09499}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GRRNLRR - Shared Code", "GRRNLRR_SharedCode.vcxproj", "{0DA6DA6D-A37D-26C3-2DDD-5026EDD09499}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,10 +24,22 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7E2F1099-C79A-BBEC-8BF3-3E97B50D3EA7}.Debug|x64.ActiveCfg = Debug|x64
-		{7E2F1099-C79A-BBEC-8BF3-3E97B50D3EA7}.Debug|x64.Build.0 = Debug|x64
-		{7E2F1099-C79A-BBEC-8BF3-3E97B50D3EA7}.Release|x64.ActiveCfg = Release|x64
-		{7E2F1099-C79A-BBEC-8BF3-3E97B50D3EA7}.Release|x64.Build.0 = Release|x64
+		{D2D7D618-0548-D543-A433-C4DD2FEBF928}.Debug|x64.ActiveCfg = Debug|x64
+		{D2D7D618-0548-D543-A433-C4DD2FEBF928}.Debug|x64.Build.0 = Debug|x64
+		{D2D7D618-0548-D543-A433-C4DD2FEBF928}.Release|x64.ActiveCfg = Release|x64
+		{D2D7D618-0548-D543-A433-C4DD2FEBF928}.Release|x64.Build.0 = Release|x64
+		{682E81A5-34D7-FF21-092F-5366391371B1}.Debug|x64.ActiveCfg = Debug|x64
+		{682E81A5-34D7-FF21-092F-5366391371B1}.Debug|x64.Build.0 = Debug|x64
+		{682E81A5-34D7-FF21-092F-5366391371B1}.Release|x64.ActiveCfg = Release|x64
+		{682E81A5-34D7-FF21-092F-5366391371B1}.Release|x64.Build.0 = Release|x64
+		{7C58917E-ECF0-7CE1-E26B-D0D4AF3782A0}.Debug|x64.ActiveCfg = Debug|x64
+		{7C58917E-ECF0-7CE1-E26B-D0D4AF3782A0}.Debug|x64.Build.0 = Debug|x64
+		{7C58917E-ECF0-7CE1-E26B-D0D4AF3782A0}.Release|x64.ActiveCfg = Release|x64
+		{7C58917E-ECF0-7CE1-E26B-D0D4AF3782A0}.Release|x64.Build.0 = Release|x64
+		{0DA6DA6D-A37D-26C3-2DDD-5026EDD09499}.Debug|x64.ActiveCfg = Debug|x64
+		{0DA6DA6D-A37D-26C3-2DDD-5026EDD09499}.Debug|x64.Build.0 = Debug|x64
+		{0DA6DA6D-A37D-26C3-2DDD-5026EDD09499}.Release|x64.ActiveCfg = Release|x64
+		{0DA6DA6D-A37D-26C3-2DDD-5026EDD09499}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
